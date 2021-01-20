@@ -1,2 +1,1 @@
-# Assignments
-ყველა დავალება
+sdfgfeb
