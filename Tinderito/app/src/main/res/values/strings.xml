@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tinderito</string>
+    <string name="back_to_your_cats">back to your cats</string>
+    <string name="todo">TODO</string>
+    <string name="like">like</string>
+    <string name="find_a_new_cat">find a new cat</string>
+    <string name="cats_you_like">Cats you like</string>
+</resources>
