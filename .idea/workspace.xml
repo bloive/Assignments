@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e9b374a-79ce-4e9e-8fb9-a5d2c815ebe2" name="Default Changelist" comment="bvc">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tinderito/app/src/main/java/com/example/tinderito/ChooseCat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Tinderito/app/src/main/java/com/example/tinderito/ChooseCat.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tinderito/app/src/main/java/com/example/tinderito/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Tinderito/app/src/main/java/com/example/tinderito/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tinderito/app/src/main/res/layout/activity_choose_cat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tinderito/app/src/main/res/layout/activity_choose_cat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tinderito/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tinderito/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nL5tpQfPh0w4LBmlbUhTReAJod" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e9b374a-79ce-4e9e-8fb9-a5d2c815ebe2" name="Default Changelist" comment="" />
+      <created>1611156747689</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611156747689</updated>
+    </task>
+    <task id="LOCAL-00001" summary="bvc">
+      <created>1611156846298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611156846298</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="bvc" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1096" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611156804608">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1096" y="263" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.0.1280.984@0.0.2560.1400" timestamp="1611156804608" />
+    <state x="1138" y="285" key="Vcs.Push.Dialog.v2" timestamp="1611156858360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1138" y="285" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1280.984@0.0.2560.1400" timestamp="1611156858360" />
+  </component>
+</project>

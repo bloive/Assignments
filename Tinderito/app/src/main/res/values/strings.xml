@@ -5,4 +5,6 @@
     <string name="like">like</string>
     <string name="find_a_new_cat">find a new cat</string>
     <string name="cats_you_like">Cats you like</string>
+    <string name="cat">Cat</string>
+    <string name="cat_preview">Cat preview</string>
 </resources>

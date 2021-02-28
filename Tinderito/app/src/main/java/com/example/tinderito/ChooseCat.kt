@@ -32,8 +32,7 @@ class ChooseCat : AppCompatActivity() {
                 .load(url)
                 .asString()
                 .setCallback { _, result ->
-                    //code
-                    Log.d("elene", "the JSON data is:\n$result")
+                    Log.d("elene", "ION JSON DATA:\n$result")
                     processCatData(result)
                 }
     }
@@ -63,12 +62,12 @@ class ChooseCat : AppCompatActivity() {
             .into(findViewById<ImageView>(R.id.catImage))
     }
 
-    fun clickNext(view: View) {
-        catList.add(currentUrl)
+    fun clickLike(view: View) {
+        if (currentUrl.isNotEmpty()) {
+            catList.add(currentUrl)
+        }
         Log.d("elene", "click")
-        Log.d("elene", "$url")
-        Ion.with(this)
-            .load(url)
+        Ion.with(this).load(url)
             .asString()
             .setCallback { _, result ->
                 //code
