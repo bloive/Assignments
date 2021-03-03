@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.fragment_chat.*
 class ChatFragment : Fragment() {
 
     private lateinit var catViewModel: CatViewModel
-    private var id_url = HashMap<String, String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,12 +21,13 @@ class ChatFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_chat, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
-                .get(CatViewModel::class.java)
 
-        textView.text = catViewModel.id_url.toString()
-        Log.d("url", "HASHMAP is ${id_url.toString()}")
+    override fun onResume() {
+        super.onResume()
+
+        catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
+            .get(CatViewModel::class.java)
+        Log.d("----", "${catViewModel.id_url.value}")
+
     }
 }

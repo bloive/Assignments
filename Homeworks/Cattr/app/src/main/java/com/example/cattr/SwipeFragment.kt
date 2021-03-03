@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
 import com.koushikdutta.ion.Ion
 import com.squareup.picasso.Picasso
@@ -15,7 +14,7 @@ import org.json.JSONObject
 
 class SwipeFragment : Fragment() {
 
-    private lateinit var catViewModel: CatViewModel
+    private lateinit var catViewModel:  CatViewModel
     private var id_url = HashMap<String, String>()
 
     private var currentID = ""
@@ -34,9 +33,6 @@ class SwipeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
-                .get(CatViewModel::class.java)
-
         like_button.setOnClickListener {
             Log.d("cat", "LIKE")
             like()
@@ -46,6 +42,13 @@ class SwipeFragment : Fragment() {
             Log.d("cat", "NEXT")
             nextCat()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
+                .get(CatViewModel::class.java)
     }
 
     private fun nextCat() {
