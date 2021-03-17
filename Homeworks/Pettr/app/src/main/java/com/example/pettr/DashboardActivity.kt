@@ -1,25 +1,26 @@
-package com.example.cattr
+package com.example.pettr
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_dashboard.*
 
-class MainActivity : AppCompatActivity() {
-
-
-
+class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_dashboard)
 
-        supportFragmentManager.beginTransaction().add(R.id.frame, SwipeFragment()).commit()
+        if (intent.extras != null) {
+            val username = intent.extras!!.get("name")
+            Toast.makeText(this, username.toString(), Toast.LENGTH_SHORT).show()
+        }
+
+        supportFragmentManager.beginTransaction().add(R.id.viewPager, SwipeFragment()).commit()
 
         swipe_button.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.frame, SwipeFragment())
+                .replace(R.id.viewPager, SwipeFragment())
                 .addToBackStack(null)
                 .commit()
             swipe_button.isClickable = false
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         chat_likes_button.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.frame, ChatFragment())
+                .replace(R.id.viewPager, ChatFragment())
                 .addToBackStack(null)
                 .commit()
             swipe_button.isClickable = true

@@ -1,4 +1,4 @@
-package com.example.cattr
+package com.example.pettr
 
 import android.os.Bundle
 import android.util.Log

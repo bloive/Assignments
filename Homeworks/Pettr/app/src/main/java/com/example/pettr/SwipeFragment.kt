@@ -1,4 +1,4 @@
-package com.example.cattr
+package com.example.pettr
 
 import android.os.Bundle
 import android.util.Log
@@ -48,7 +48,7 @@ class SwipeFragment : Fragment() {
         super.onResume()
 
         catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
-                .get(CatViewModel::class.java)
+            .get(CatViewModel::class.java)
     }
 
     private fun nextCat() {
@@ -69,7 +69,7 @@ class SwipeFragment : Fragment() {
         currentUrl = json.getString("url")
         Picasso.get()
             .load(currentUrl)
-                .into(imageView)
+            .into(imageView)
 
     }
 

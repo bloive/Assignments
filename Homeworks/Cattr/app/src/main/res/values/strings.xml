@@ -11,4 +11,13 @@
     <string name="password">Password</string>
     <string name="name">Name</string>
     <string name="register">Register</string>
+    <string name="Profile_name">Display Name</string>
+    <string name="profile_status">Meow!</string>
+    <string name="change_status_button">Change status</string>
+    <string name="change_picture_button">Change picture</string>
+    <string name="change_status">Change Status</string>
+    <string name="change_picture">Change Picture</string>
+    <string name="status">Meow!</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="enter_your_status">Enter your status</string>
 </resources>
