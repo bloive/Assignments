@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Catr</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cat_image">TODO</string>
+    <string name="cat_image_1">cat_image_1</string>
+    <string name="cat_image_2">cat_image_2</string>
+    <string name="cat_image_3">cat_image_3</string>
+</resources>

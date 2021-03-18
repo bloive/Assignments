@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pettr</string>
+    <string name="title">pettr</string>
+    <string name="sign_up_button">sign_up</string>
+    <string name="log_in_button">log_in</string>
+    <string name="catlogo">catLogo</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="sign_up">sign_up</string>
+    <string name="name">name</string>
+    <string name="log_in">Log In</string>
+    <string name="hint_password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="hint_email">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cat_image">cat_image</string>
+</resources>
