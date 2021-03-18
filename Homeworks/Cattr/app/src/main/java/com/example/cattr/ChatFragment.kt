@@ -26,7 +26,7 @@ class ChatFragment : Fragment() {
 
         catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
             .get(CatViewModel::class.java)
-        Log.d("----", "${catViewModel.id_url.value}")
+//        Log.d("----", "${catViewModel.url_list.value}")
 
     }
 }

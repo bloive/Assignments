@@ -6,12 +6,14 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.theartofdev.edmodo.cropper.CropImage
 import id.zelory.compressor.Compressor
@@ -40,6 +42,8 @@ class SettingsActivity : AppCompatActivity() {
         mCurrentUser = FirebaseAuth.getInstance().currentUser
 
         val userId = mCurrentUser!!.uid
+
+        mStorageRef = FirebaseStorage.getInstance().reference
 
         mDatabase = FirebaseDatabase.getInstance().reference
                 .child("Users")
@@ -71,45 +75,39 @@ class SettingsActivity : AppCompatActivity() {
             val galleryIntent = Intent()
             galleryIntent.type = "image/*"
             galleryIntent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(galleryIntent, galleryId)
+            startActivityForResult(Intent.createChooser(galleryIntent, "SELECT_IMAGE"), galleryId)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            val result = CropImage.getActivityResult(data)
-            if (resultCode == RESULT_OK) {
-
-                val image: Uri? = data!!.data
-                CropImage.activity(image)
+        Log.d("D", "$requestCode $resultCode")
+        if (requestCode == galleryId) {
+            val image: Uri? = data!!.data
+            CropImage.activity(image)
                     .setAspectRatio(1, 1)
                     .start(this)
-
-                val resultUri: Uri = result.uri
+        }
+        //https://github.com/zetbaitsu/Compressor
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+            if (resultCode == Activity.RESULT_OK) {
+                val resultUri = result.uri
                 var userId = mCurrentUser!!.uid
-                var thumbFile = File(resultUri.path!!)
-
-                //https://github.com/zetbaitsu/Compressor
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                val error = result.error
-                if (resultCode == Activity.RESULT_OK) {
-                    val resultUri = result.uri
-                    var userId = mCurrentUser!!.uid
-                    val thumbFile = File(resultUri.path!!)
-                    lifecycleScope.launch {
-                        var thumbBitmap = Compressor.compress(this@SettingsActivity, thumbFile) {
-                            resolution(200, 200)
-                            quality(80)
-                        }
-//                                .compressFormat()
-
-                        //upload image to firebase
-                        var byteArray = ByteArrayOutputStream()
-                        thumbBitmap.compress
+                val thumbFile = File(resultUri.path!!)
+                lifecycleScope.launch {
+                    var thumbBitmap = Compressor.compress(this@SettingsActivity, thumbFile) {
+                        resolution(200, 200)
+                        quality(80)
+                        format(Bitmap.CompressFormat.JPEG)
                     }
 
+                    var thumbByteArray = thumbBitmap.readBytes()
 
+                    var filePath = mStorageRef!!.child("image").child(
+                            userId + ".jpg"
+                    )
+                    filePath.putFile(resultUri)
                 }
             }
         }

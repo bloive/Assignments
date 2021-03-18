@@ -32,7 +32,7 @@ class DashboardActivity : AppCompatActivity() {
 
         chat_likes_button.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.frame, ChatFragment())
+                    .replace(R.id.frame, LikesFragment())
                     .addToBackStack(null)
                     .commit()
             swipe_button.isClickable = true

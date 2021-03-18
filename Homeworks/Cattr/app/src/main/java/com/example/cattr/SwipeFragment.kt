@@ -13,13 +13,10 @@ import kotlinx.android.synthetic.main.fragment_swipe.*
 import org.json.JSONObject
 
 class SwipeFragment : Fragment() {
-
     private lateinit var catViewModel: CatViewModel
-    private var id_url = HashMap<String, String>()
-
+    private var urlSwipe = mutableListOf<String>()
     private var currentID = ""
     private var currentUrl = ""
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,12 +26,12 @@ class SwipeFragment : Fragment() {
         Log.d("life", "onCreateView")
         return inflater.inflate(R.layout.fragment_swipe, container, false)
     }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         like_button.setOnClickListener {
             Log.d("cat", "LIKE")
+
             like()
         }
 
@@ -43,14 +40,11 @@ class SwipeFragment : Fragment() {
             nextCat()
         }
     }
-
     override fun onResume() {
         super.onResume()
-
         catViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())
                 .get(CatViewModel::class.java)
     }
-
     private fun nextCat() {
         Ion.with(this)
             .load("https://api.thecatapi.com/v1/images/search")
@@ -60,7 +54,6 @@ class SwipeFragment : Fragment() {
                 processCatData(result)
             }
     }
-
     private fun processCatData(result: String) {
         val json = JSONObject("{\"image\":$result}")
             .getJSONArray("image")
@@ -70,14 +63,13 @@ class SwipeFragment : Fragment() {
         Picasso.get()
             .load(currentUrl)
                 .into(imageView)
-
     }
-
     private fun like() {
-        id_url[currentID] = currentUrl
-        catViewModel.id_url.value = this.id_url
+        urlSwipe.add(currentUrl)
+        catViewModel.addUrl(currentUrl)
+        Log.d("urlSwipe", "$urlSwipe")
+        Log.d("currentUrl", "$currentUrl")
 
-
-        Log.d("cat", "$id_url")
+        catViewModel.urlString.value = currentUrl
     }
 }
